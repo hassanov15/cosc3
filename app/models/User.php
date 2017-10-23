@@ -1,0 +1,44 @@
+<?php
+
+class User {
+
+    public $username;
+    public $password;
+    public $auth = false;
+
+    public function __construct() {
+        
+    }
+
+    public function authenticate() {
+        /*
+         * if username and password good then
+         * $this->auth = true;
+         */
+		 
+		$db = db_connect();
+        $query= "SELECT * FROM users WHERE username=:username AND password=:password";
+        $statement=$db->prepare($query);
+        $statement->execute(array(
+            'username' => $_POST['username'],
+            'password' => $_POST['password']
+        ));
+        $count=$statement->rowCount();
+        if($count>0){
+            $_SESSION['username']=$_POST['username'];
+            $_SESSION['is authenticated']= true;
+		}
+    }
+	
+	public function register ($username, $password) {
+		$db = db_connect();
+        $insert=$conn->prepare("INSERT INTO users(username, password, email)
+               values(:username,:password,:email)");
+   $insert->bindParam('username',$name);
+   $insert->bindParam('email',$email);
+   $insert->bindParam('password',$pass1);
+   $insert->execute();
+
+	}
+
+}
