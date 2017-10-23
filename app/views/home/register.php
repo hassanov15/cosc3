@@ -18,14 +18,12 @@
 					  
 
     <head>
-        <title>Login Page</title>
+        <title>Sign Up Page</title>
     </head>
     
     <body>
-        <!-- Output error message if any -->
-        
-        
-        <!-- form for login -->
+         <form method="post" action="register.php">
+       
         <form>
            <label for="email">Email:</label><br/>
 			<input type="text" name="email"><br/>
