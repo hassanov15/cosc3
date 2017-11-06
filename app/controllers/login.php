@@ -19,20 +19,21 @@ class Login extends Controller {
             $_SESSION['auth'] = true;
         }
         
-        header('Location: home.php');
+        header('Location: /home');
     }
 	
 	public function register () {
 		$user = $this->model('User');
-		
+		$this->view('home/register');
 		if(isset($_POST['save'])){
    $name=$_POST['username'];
    $email=$_POST['email'];
    $pass1=$_POST['password'];
    $hash=password_hash($pass1,PASSWORD_DEFAULT);
+   $user-> register($name,$hash);
+
 		}
 		
-		$this->view('home/register');
 	}
 }
 

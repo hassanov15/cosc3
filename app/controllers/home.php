@@ -5,12 +5,8 @@ class Home extends Controller {
     public function index($name = '') {		
         $user = $this->model('User');
 		
-		if (strtolower($_SESSION['name']) == 'mike') {
-			$message = 'You are awesome';
-		} else {
-			$message = 'You suck';
-		}
-		
+		$message =' Welcome'.$SESSION['name'].'<br>'.'the date is '.date("Y/m/d");
+
         $this->view('home/index', ['message' => $message]);
     }
 
