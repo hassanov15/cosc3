@@ -12,7 +12,7 @@
             <input type="text" name="username"><br/>
             <label for="password">Password:</label><br/>
             <input type="password" name="password"><br/>
-            <input type="submit" name="save" value="Sumbit" >
+            <input type="submit" name="reg" value="submit" >
 		
         </form>
         

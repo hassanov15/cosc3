@@ -2,7 +2,8 @@
 
 class User {
 
-    public $name;
+    public $email;
+    public $username;
     public $password;
     public $auth = false;
 
@@ -30,11 +31,12 @@ class User {
 		}
     }
 	
-	public function register ($name, $password) {
+	public function register ($username, $password,$email) {
 		$db = db_connect();
-        $insert=$conn->prepare("INSERT INTO users(username, password)
-               values(:username,:password)");
-   $insert->bindParam('username',$name);
+
+        $insert=$conn->prepare("INSERT INTO users(username, password) 
+            values(:username,:password)");
+   $insert->bindParam('username',$username);
    $insert->bindParam('email',$email);
    $insert->bindParam('password',$password);
    $insert->execute();

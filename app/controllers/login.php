@@ -6,7 +6,7 @@ class Login extends Controller {
 
         if (isset($_POST['username']) && isset($_POST['password'])) {
 
-        if ($_POST['username'] == $username && $_POST['password'] == 
+        if ($_POST['username'] == $user && $_POST['password'] == 
         	$password){
         	
         }
@@ -25,11 +25,11 @@ class Login extends Controller {
 	public function register () {
 		$user = $this->model('User');
 		$this->view('home/register');
-		if(isset($_POST['save'])){
-   $name=$_POST['username'];
+		if(isset($_POST['reg'])){
+   $username=$_POST['username'];
    $email=$_POST['email'];
-   $pass1=$_POST['password'];
-   $hash=password_hash($pass1,PASSWORD_DEFAULT);
+   $password=$_POST['password'];
+   $hash=password_hash($password,PASSWORD_DEFAULT);
    $user-> register($name,$hash);
 
 		}
