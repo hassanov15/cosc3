@@ -21,8 +21,7 @@ class User {
         $query= "SELECT * FROM users WHERE username=:username AND password=:password";
         $statement=$db->prepare($query);
         $statement->execute(array(
-            'username' => $_POST['username'],
-            'password' => $_POST['password']
+            'username' => $_POST['username'],'password' => $_POST['password']
         ));
         $count=$statement->rowCount();
         if($count>0){
