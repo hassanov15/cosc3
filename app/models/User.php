@@ -3,7 +3,7 @@
 class User {
 
     public $email;
-    public $username;
+    public $user;
     public $password;
     public $auth = false;
 
@@ -36,7 +36,7 @@ class User {
 
         $insert=$conn->prepare("INSERT INTO users(username, password) 
             values(:username,:password)");
-   $insert->bindParam('username',$username);
+   $insert->bindParam('username',$user);
    $insert->bindParam('email',$email);
    $insert->bindParam('password',$password);
    $insert->execute();

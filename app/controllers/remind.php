@@ -15,7 +15,7 @@ class Remind extends Controller {
 			die;
 		}
 		
-		$this->view('remind/index', [
+		$this->view('remind/index'), [
 		'list' => $list
 		] );
     }
