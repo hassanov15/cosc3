@@ -1,4 +1,19 @@
-<?php wp_footer();?>
+<!DOCTYPE html>
+<html>
+<body>
+
+<footer class="footer">    
+    <div class="row">
+    	<div class="col-lg-12">
+
+  <p>Contact information for any help: <a href="mailto:someone@example.com">hassan@hotmail.com</a>.</p>
+</footer>
+
+
+
+</html>
+
+
 <footer class="footer">    
     <div class="row">
         <div class="col-lg-12">
