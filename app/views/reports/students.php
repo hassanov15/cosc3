@@ -24,23 +24,17 @@
 	
 	$result = $_index->getTotalLogins();
 	echo "<table class='table'>";
-    echo "<thead>";
-      echo "<tr>";
         echo "<th>UserName</th>";
         echo "<th>Total Logins </th>";
-      echo "</tr>";
-    echo "</thead>";
-    echo "<tbody>";
-    
+
 	foreach($result as $row)
 	{
 		if($row['state'] == "LoggdIn")
 		{
-		echo "<tr>";
 		echo "<td> {$row['username']} </td>";
 		echo "<td> {$row['totallogins']} </td>";
-		echo "</tr>";
 		}
 	}
+    ?>
 
     <?php require_once '../app/views/templates/footer.php' ?>
