@@ -1,13 +1,14 @@
+
 <?php
 if (isset($_SESSION['auth']) != 1) {
     header('Location: /home');
 }
 ?>
-
 <!DOCTYPE html>
+
 <html lang="en">
     <head>
-        <link href= "/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+        <link href= "/css/bootstrap.css" rel="stylesheet" type="text/css">
         <link rel="icon" href="/favicon.png">
         <title>COSC 4806</title>
         <?php wp_head();?>
