@@ -35,13 +35,6 @@ public function getTotalLogins()
 	public function getCertainNotes($from,$to)
 	{
 	
-		/*if (isset($_POST['from'])) {
-            $from = $_POST['from'];
-        }
-
-        if (isset($_POST['to'])) {
-            $to = $_POST['to'];
-        }*/
 	
 		$db = db_connect();
         $statement = $db->prepare($query="SELECT * from notes where createdDate between '".$_POST["from"]."' and '".$_POST["to"]."'");

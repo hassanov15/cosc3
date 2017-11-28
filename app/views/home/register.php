@@ -8,7 +8,7 @@
             <div class="col-xs-6 col-xs-offset-3">
                 <div class="form-wrap">
                 <h1>Register</h1>
-                    <form role="form" action="register.php" method="post" id="login-form" autocomplete="off">
+                    <form role="form" action="login/register" method="post" id="login-form" autocomplete="off">
                         <div class="form-group">
                             <label for="username" class="sr-only">username</label>
                             <input type="text" name="username" id="username" class="form-control" placeholder="Enter Desired Username">
@@ -22,7 +22,10 @@
                             <input type="password" name="password" id="key" class="form-control" placeholder="Password">
                         </div>
                 
-                        <input type="submit" name="submit" id="btn-register" class="btn btn-custom btn-lg btn-block" value="Register">
+                    <div class="form-group">
+                      <div class="col-lg-10 col-lg-offset-2">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                      </div>
                     </form>
                  </div>
                 </div>
@@ -38,4 +41,4 @@
 
 
 
-    <?php require_once '../app/views/templates/footer.php' ?>
+    <?php require_once '../app/views/templates/footerPublic.php' ?>

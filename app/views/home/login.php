@@ -5,6 +5,16 @@
             <div class="col-lg-12">
                 <h1>You are not logged in! </h1>
                 <p class="lead"> <?= date("F jS, Y"); ?></p>
+                <?php 
+				//echo $_SESSION['attempts'];
+			//	echo  $_COOKIE['attempts'];
+				if(isset($_COOKIE['attempts'])) 
+				{
+					echo "Too Many Attempts! pleaes try after 60 seconds.";
+				}
+				//else
+					//echo "cookies is not set";
+			?>
             </div>
         </div>
     </div>

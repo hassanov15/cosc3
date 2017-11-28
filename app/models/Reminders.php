@@ -2,13 +2,19 @@
 
 class Reminders {
     
+    public $id;
+    public $subject;
+    public $description;
+    public $createdDate;
+    public $username;
+    
     public function __construct() {
         
     }
 	
 	public function get_reminders () {
 		$db = db_connect();
-        $statement = $db->prepare("SELECT * FROM reminders
+        $statement = $db->prepare("SELECT * FROM note
                                 WHERE username = :username AND deleted = 0;");
         $statement->bindValue(':username', $_SESSION['username']);
 		
@@ -19,7 +25,7 @@ class Reminders {
 	
 	public function get_reminder ($id) {
 		$db = db_connect();
-        $statement = $db->prepare("SELECT * FROM reminders WHERE
+        $statement = $db->prepare("SELECT * FROM note WHERE
                                 id = :id;");
         $statement->bindValue(':id', $id);
 		
@@ -31,17 +37,20 @@ class Reminders {
 	public function removeItem($id) {
 		$db = db_connect();
 
-        $statement = $db->prepare("UPDATE reminders SET deleted = 1 WHERE id = :id");
+        $statement = $db->prepare("DELETE FROM note WHERE id = :id");
         $statement->bindValue(':id', $id);
         $statement->execute();
 
 	}
-	
-	
-	
-	
-	
-	
+    public function update($id,$subject,$description){
+        $db = db_connect();
+        $sql = "UPDATE note set subject=:subject,description = :description WHERE id =:id";
+        $db->execute();
+        $statement = $db->prepare("INSERT INTO note (subject,description) VALUES (:subject,:description");
+        $statement->bindValue(':subject', $subject);       
+        $statement->bindValue(':description', $description);
+        $statement->execute();  
+    }
 
     public function authenticate() {
         /*
