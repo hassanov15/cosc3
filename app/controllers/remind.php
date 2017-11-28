@@ -35,6 +35,10 @@ class Remind extends Controller {
     }
 	
 	public function create() {
+		  if (!isset($_SESSION['loggedIn']) || $_SESSION['loggedIn'] == false) {
+        if (isset($_POST['username']) && isset($_POST['password'])) {
+
+        if ($_POST['username'] == $user && $_POST[
         $this->view('home/login');
     }
 }
